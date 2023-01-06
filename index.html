@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion-Budget</title>
+    <script
+      src="https://kit.fontawesome.com/64a8b49a16.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+    <div class="contenue">
+        <div class="section1">
+            <h1>Gestion Budget</h1>
+            <!--Budget depenses et soldes-->
+            <div class="kkdepense">
+                <div>
+                    <h2>Budget</h2>
+                    <div id="budget">
+                        <span id="budget_fcfa"></span> 
+                       <p id="budget_fcfa1">F CFA</p>
+                    </div>
+                </div>
+                <div>
+                    <h2>Dépense</h2>
+                    <div id="budget">
+                        <span id="depense_fcfa"></span>
+                       <p id="budget_fcfa1">F CFA</p>
+                    </div>
+                </div>
+                <div>
+                    <h2>Solde</h2>
+                    <div id="budget">
+                        <span id="solde_fcfa"></span>
+                       <p id="budget_fcfa1">F CFA</p>
+                    </div>
+                </div>
+            </div>
+            <!--Liste des dépenses-->
+            <div class="section2">
+                <div class="ajouter">
+                    <button class="buttonrev" type="submit" id ="btn_ajout_rev"> </a> Revenu</button>
+                    <button class="buttondep" type="submit" id ="btn_ajout_dep">Ajouter Dépense</button>
+                </div>
+                <div>
+                    <legend>Ajouter Depense ou Revenu</legend>
+                    <div id="formAjouter">
+                        <input type="text" name="title" id="title" class="form-control" placeholder="Titre" required />
+                        <input type="number" name="amount" id="amount" class="form-control" placeholder="Montant" required />
+                    </div>
+                </div>
+            </div>
+            <!--Liste des Revenus-->
+            <div class="liste_depensedeprev">
+                    <div id="list_revenu">
+                        <legend><h2>Liste des Revenus</h2></legend>
+                       
+                    </div>
+                <!-- <table class="table">
+                     <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Montant</th>
+                            <th>Actions</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+ 
+                     </tbody>
+                </table> -->
+            </div>
+            <div class="liste_depensedeprev">
+                <div id="list_depense">
+                    <legend><h2>Liste des Dépenses</h2></legend>
+                    
+                </div>
+               <!-- <table>
+                    <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Montant</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+               </table> -->
+            </div>
+        </div>
+    </div>
+    <script src="./script.js" defer></script>
+</body>
+</html>
