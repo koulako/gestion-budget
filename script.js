@@ -4,13 +4,22 @@ const itemCtrl = (function () {
     this.title = title;
     this.amount = amount;
   };
+ //Recupere au localstorage
+  function getData(){
+    return JSON.parse(localStorage.getItem('data'))
+  }
+  const dataItem = getData() || [];
+  //Ajouter dans le localStorage
+  function setData(data){
+    localStorage.setItem('data', JSON.stringify(data))
+  }
 
-  const data = {
-    items: [],
-  };
+  setData(dataItem);
+  const data = getData();
+
   return {
     logData: function () {
-      return data;
+      return dataItem;
     },
     addMoney: function (title, amount) {
       //créer un id au hasard
@@ -18,7 +27,8 @@ const itemCtrl = (function () {
       //créer new item
       newMoney = new Item(ID, title, amount);
       //poussez le dans le tableau
-      data.items.push(newMoney);
+      data.push(newMoney);
+      setData(data)
 
       return newMoney;
     },
@@ -39,12 +49,12 @@ const itemCtrl = (function () {
     },
     deleteAmountArr: function (id) {
       //get all the ids
-      const ids = data.items.map(function (item) {
+      const ids = dataItem.map(function (item) {
         return item.id;
       });
 
       const index = ids.indexOf(id);
-      data.items.splice(index, 1);
+      dataItem.splice(index, 1);
     },
   };
 })();
@@ -166,7 +176,7 @@ const UICtrl = (function () {
       const amountDelete = document.querySelector(amountId);
       //remove from ui
       amountDelete.remove();
-    },
+    }
   };
 })();
 
@@ -255,5 +265,6 @@ const App = (function () {
     },
   };
 })(itemCtrl, UICtrl);
+
 
 App.init();

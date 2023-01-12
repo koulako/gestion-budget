@@ -80,6 +80,7 @@ h1{
     font-size: 1em;
     font: bold;
     margin-bottom: 25px;
+    margin-right: 20px;
     cursor: pointer;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
@@ -94,7 +95,8 @@ h1{
 }
 .ajouter{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-content: center;
 }
 .form-titre input{
     font-size: 1em;
@@ -170,6 +172,9 @@ legend{
     background-color: var(--red);
     cursor: pointer;
     display: inline-block;
+  }
+  legend{
+    font-size: 1.2em;
   }
 @media screen  and (max-width:780px) {
     body{
