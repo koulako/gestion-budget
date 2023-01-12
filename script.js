@@ -128,26 +128,28 @@ const UICtrl = (function () {
         UISelectors.moneyEarned
       ).innerHTML = incomeSum.toFixed(0));
     },
-    addExpenseItem: function (item) {
-      //créer une nouvelle section
-      const div = document.createElement("div");
-      //ajouter une classe
-      div.classList = "itemdepense";
-      //ajouter un id dans item
-      div.id = `item-${item.id}`;
-      //ajouter du  html
-      div.innerHTML = `
-            <h4>${item.title}</h4>
-            <div class="item__expense">
-                <span class="expense__amount">${item.amount}</span>
-                <p class="symbol">FCFA</p>
-            </div>
-            <i class="fa-solid fa-trash-can"> </i>
-            `;
-      //insérer des dépenses dans la liste
-      document
-        .querySelector(UISelectors.expensesList)
-        .insertAdjacentElement("beforeend", div);
+    addExpenseItem: function () {
+      for(let i = 0;i<dataItem.length;i++){
+        //créer une nouvelle section
+        const div = document.createElement("div");
+        //ajouter une classe
+        div.classList = "itemdepense";
+        //ajouter un id dans item
+        div.id = `item-${item.id}`;
+        //ajouter du  html
+        div.innerHTML = `
+              <h4>${dataItem.title}</h4>
+              <div class="item__expense">
+                  <span class="expense__amount">${dataItem.amount}</span>
+                  <p class="symbol">FCFA</p>
+              </div>
+              <i class="fa-solid fa-trash-can"> </i>
+              `;
+        //insérer des dépenses dans la liste
+        document
+          .querySelector(UISelectors.expensesList)
+          .insertAdjacentElement("beforeend", div);
+      }
     },
     updateSpent: function () {
       //tous les éléments dépenses
